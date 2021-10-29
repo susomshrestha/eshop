@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const productRouter = require('./routers/products');
 
 require('dotenv/config');
 
@@ -11,14 +12,8 @@ const api = process.env.API_URL;
 app.use(express.json());
 app.use(morgan('tiny')); // log http methods
 
-app.get(`${api}/products`, (req, res) => {
-  const product = {
-    id: 1,
-    name: 'Product1',
-    image: 'some_url',
-  };
-  res.send(product);
-});
+// Routes
+app.use(`${api}/products`, productRouter);
 
 mongoose
   .connect(process.env.CONNECTION_STRING, {
