@@ -5,9 +5,12 @@ const mongoose = require('mongoose');
 const productRouter = require('./routers/products');
 
 require('dotenv/config');
+const cors = require('cors');
 
 const api = process.env.API_URL;
 
+app.use(cors());
+app.options('*', cors());
 // middelware
 app.use(express.json());
 app.use(morgan('tiny')); // log http methods
