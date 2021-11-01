@@ -1,11 +1,39 @@
 const mongoose = require('mongoose');
 
 const productSchema = mongoose.Schema({
-  name: String,
-  image: String,
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  richDescription: {
+    type: String,
+  },
+
+  image: {
+    type: String,
+  },
+  images: [
+    {
+      type: String,
+    },
+  ],
+  price: {
+    type: Number,
+  },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+  },
   countInStock: {
     type: Number,
-    default: 1,
+    required: true,
+  },
+  rating: {
+    type: Number,
   },
 });
 
