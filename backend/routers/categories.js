@@ -19,7 +19,7 @@ router.get(`/:id`, async (req, res) => {
       return res.status(500).send({ success: false });
     }
 
-    res.send(caetgoryList);
+    res.send(caetgory);
   } catch (error) {
     res.status(500).send(error);
   }
