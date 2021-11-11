@@ -14,7 +14,7 @@ router.get(`/`, async (req, res) => {
 
 router.get(`/:id`, async (req, res) => {
   try {
-    const caetgory = await Category.findById(res.params.id);
+    const caetgory = await Category.findById(req.params.id);
     if (!caetgory) {
       return res.status(500).send({ success: false });
     }

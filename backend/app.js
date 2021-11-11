@@ -6,6 +6,8 @@ const productRouter = require('./routers/products');
 const categoryRouter = require('./routers/categories');
 const userRouter = require('./routers/users');
 const orderRouter = require('./routers/orders');
+const auth = require('./helpers/jwt');
+const errorHandler = require('./helpers/error-handler');
 
 require('dotenv/config');
 const cors = require('cors');
@@ -14,9 +16,12 @@ const api = process.env.API_URL;
 
 app.use(cors());
 app.options('*', cors());
+
 // middelware
 app.use(express.json());
 app.use(morgan('tiny')); // log http methods
+app.use(auth());
+app.use(errorHandler);
 
 // Routes
 app.use(`${api}/products`, productRouter);
