@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(morgan('tiny')); // log http methods
 app.use(auth());
 app.use(errorHandler);
+app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 
 // Routes
 app.use(`${api}/products`, productRouter);
