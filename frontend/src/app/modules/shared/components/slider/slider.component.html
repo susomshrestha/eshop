@@ -1,0 +1,15 @@
+<div class="slider">
+  <div class="slide-button left" (click)="changeSlide(true)">
+    &#60;
+  </div>
+  <div class="slide-button right" (click)="changeSlide(true)">
+    &#62;
+  </div>
+  <div
+    class="slide-item"
+    *ngFor="let item of slideItems; let i = index"
+    [class.active]="currentSlide === i"
+  >
+    <img [src]="'/assets/images/' + item" />
+  </div>
+</div>
