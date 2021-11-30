@@ -1,0 +1,60 @@
+@import '../../../../../styles.scss';
+
+.header {
+  background: white;
+
+  &.sticky {
+    left: 0;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 10px 15px rgb(25 25 25 / 10%);
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    .logo-title {
+      font-size: $font-size-lg;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .logo-div {
+        padding: 10px;
+        background: $flamingo;
+        border-radius: 50%;
+        color: white;
+        display: grid;
+        place-items: center;
+      }
+
+      .title-div {
+        margin-left: 10px;
+        color: $text-black;
+      }
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+
+      .cart {
+        margin-right: 10px;
+      }
+
+      i {
+        font-size: $font-size-xlg;
+        cursor: pointer;
+
+        &:hover {
+          color: $flamingo;
+        }
+      }
+    }
+  }
+}
