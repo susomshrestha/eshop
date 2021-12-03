@@ -9,6 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CategoryComponent } from './components/category/category.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ProductSliderComponent } from './components/product-slider/product-slider.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { CategoryComponent } from './components/category/category.component';
     FooterComponent,
     ProductDetailComponent,
     CategoryComponent,
+    ProductSliderComponent,
+    ProductItemComponent,
   ],
-  imports: [CommonModule, ShopRoutingModule, SharedModule],
+  imports: [CommonModule, ShopRoutingModule, SharedModule, SlickCarouselModule],
 })
 export class ShopModule {}

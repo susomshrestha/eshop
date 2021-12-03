@@ -1,0 +1,103 @@
+@import '../../../../../styles.scss';
+
+footer {
+  background: $bg-green-dk;
+
+  .copyright {
+    padding: 40px;
+    text-align: center;
+    color: white;
+  }
+
+  .footer-wrap {
+    padding: 40px;
+    display: grid;
+    grid-template-areas:
+      'logo explore customer connect'
+      'logo explore-list customer-list connect-list';
+
+    .logo {
+      grid-area: logo;
+      color: white;
+      font-size: $font-size-lg;
+      display: flex;
+      align-items: flex-start;
+
+      .wrap {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-div {
+        padding: 10px;
+        background: $flamingo;
+        border-radius: 50%;
+        color: black;
+        display: grid;
+        place-items: center;
+      }
+
+      .title-div {
+        margin-left: 10px;
+        color: white;
+      }
+    }
+
+    .title {
+      color: white;
+      font-size: $font-size-lg;
+    }
+
+    .list {
+      color: $text-white-dk;
+      font-size: $font-size-n;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    .link {
+      padding: 0 5px;
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          cursor: pointer;
+          transition: letter-spacing 100ms ease-in;
+        }
+
+        li:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .explore {
+      grid-area: explore;
+    }
+
+    .customer-care {
+      grid-area: customer;
+    }
+
+    .connect {
+      grid-area: connect;
+    }
+
+    .explore-list {
+      grid-area: explore-list;
+    }
+
+    .customer-care-list {
+      grid-area: customer-list;
+    }
+
+    .connect-list {
+      grid-area: connect-list;
+
+      .location {
+        margin-top: 10px;
+        line-height: 1;
+      }
+    }
+  }
+}

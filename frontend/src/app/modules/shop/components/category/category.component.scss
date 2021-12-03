@@ -2,9 +2,9 @@
 
 .category {
   margin-top: 40px;
-  padding: 20px 0;
 
   .item-wrap {
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;

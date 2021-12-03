@@ -1,0 +1,42 @@
+@import '../../../../../styles.scss';
+
+.title-wrap {
+  padding: 0 40px;
+  font-size: $font-size-xxlg;
+  color: $text-black;
+}
+
+.carousel-wrap {
+  padding: 20px 40px;
+  margin-top: 20px;
+
+  .carousel {
+    .gap {
+      margin-left: 10px;
+    }
+
+    ::ng-deep {
+      .slick-arrow {
+        @include align(false, true);
+        color: $text-black-lt;
+        font-size: $font-size-xxxlg;
+        height: 40px;
+        width: 40px;
+        z-index: 1;
+        cursor: pointer;
+
+        &:hover {
+          color: $text-orange;
+        }
+
+        &.arrow-left {
+          left: -20px;
+        }
+
+        &.arrow-right {
+          right: -40px;
+        }
+      }
+    }
+  }
+}
