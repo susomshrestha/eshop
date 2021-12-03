@@ -12,3 +12,10 @@
     transform: translateY(-50%);
   }
 }
+
+@mixin truncate($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

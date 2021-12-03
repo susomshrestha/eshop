@@ -1,0 +1,22 @@
+<div class="fixed-width-container">
+  <div class="title-wrap">
+    {{ title }}
+  </div>
+  <div class="carousel-wrap">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div
+        ngxSlickItem
+        *ngFor="let slide of slides; let i  = index"
+        class="slide"
+      >
+        <div class="product-item-wrap" [class.gap]="i !== 0">
+          <app-product-item [product]="slide.img"></app-product-item>
+        </div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</div>
