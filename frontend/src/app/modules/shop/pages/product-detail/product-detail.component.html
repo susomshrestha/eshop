@@ -1,1 +1,75 @@
-<p>product-detail works!</p>
+<div class="product-detail">
+  <div class="fixed-width-container">
+    <div class="detail">
+      <div class="image-div">
+        <div class="main-image">
+          <img [src]="'/assets/images/product/' + mainImage" />
+        </div>
+        <div class="image-list">
+          <ngx-slick-carousel
+            class="carousel"
+            #slickModal="slick-carousel"
+            [config]="slideConfig"
+            (afterChange)="afterChange($event)"
+          >
+            <div
+              ngxSlickItem
+              *ngFor="let slide of slides; let i  = index"
+              class="slide"
+              (click)="changeImage(i)"
+            >
+              <div class="item">
+                <img [src]="'/assets/images/product/' + slide.img" />
+              </div>
+            </div>
+          </ngx-slick-carousel>
+        </div>
+      </div>
+      <div class="details">
+        <div class="name mt-20">Rthe Rage of Dragons</div>
+        <div class="price mt-40">50.00</div>
+        <div class="review mt-20">
+          <ng-rating-bar [value]="2" [ratingCount]="5"></ng-rating-bar>
+          (120 Reviews)
+        </div>
+        <div class="cart-wishlist mt-20">
+          <div class="cart">
+            <button class="btn btn-oval btn-orange">Add To Cart</button>
+          </div>
+          <div class="wishlist">
+            wishlist
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="summary">
+      <!-- Tab links -->
+      <div class="tab">
+        <div
+          class="tablinks"
+          [class.active]="currentTab === item"
+          (click)="changeTab(item)"
+          *ngFor="let item of tabs"
+        >
+          {{ item }}
+        </div>
+      </div>
+      <!-- Tab content -->
+      <div
+        class="tab-content description"
+        [class.active]="currentTab === 'Description'"
+      >
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+      </div>
+
+      <div
+        class="tab-content reviews"
+        [class.active]="currentTab === 'Reviews'"
+      >
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+      </div>
+    </div>
+  </div>
+</div>

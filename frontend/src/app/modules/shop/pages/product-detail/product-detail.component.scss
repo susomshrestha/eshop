@@ -1,0 +1,129 @@
+@import '../../../../../styles.scss';
+
+.product-detail {
+  .detail {
+    background: #f3ead8;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 40px;
+    padding: 40px;
+
+    .image-div {
+      .image-list {
+        margin-top: 20px;
+
+        ::ng-deep {
+          .slick-arrow {
+            @include align(false, true);
+            color: $text-black-lt;
+            font-size: $font-size-xlg;
+            height: 40px;
+            width: 40px;
+            z-index: 1;
+            cursor: pointer;
+
+            &:hover {
+              color: $text-orange;
+            }
+
+            &.arrow-left {
+              left: -20px;
+            }
+
+            &.arrow-right {
+              right: -40px;
+            }
+          }
+        }
+
+        .item {
+          img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+      .main-image {
+        height: 450px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .mt-20 {
+        margin-top: 20px;
+      }
+
+      .mt-40 {
+        margin-top: 40px;
+      }
+
+      .name {
+        font-size: $font-size-xlg;
+        @include truncate(2);
+      }
+
+      .price {
+        font-size: $font-size-xlg;
+      }
+
+      .review,
+      .cart-wishlist {
+        display: flex;
+        align-items: center;
+      }
+
+      .cart-wishlist {
+        button {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .summary {
+    margin-top: 20px;
+    padding: 0 40px;
+
+    .tab {
+      display: flex;
+      gap: 10px;
+
+      .tablinks {
+        padding: 10px 10px 20px 10px;
+        cursor: pointer;
+        font-size: $font-size-md;
+        border-bottom: 3px solid white;
+        text-align: center;
+        min-width: 100px;
+
+        &:hover,
+        &.active {
+          color: $text-orange;
+          border-bottom: 3px solid $text-orange;
+        }
+      }
+    }
+    .tab-content {
+      display: none;
+      opacity: 0;
+      padding: 20px 0;
+
+      &.active {
+        opacity: 1;
+        display: block;
+      }
+    }
+  }
+}

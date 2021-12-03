@@ -12,6 +12,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { NgRatingBarModule } from 'ng-rating-bar';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,12 @@ import { ProductItemComponent } from './components/product-item/product-item.com
     ProductSliderComponent,
     ProductItemComponent,
   ],
-  imports: [CommonModule, ShopRoutingModule, SharedModule, SlickCarouselModule],
+  imports: [
+    CommonModule,
+    ShopRoutingModule,
+    SharedModule,
+    SlickCarouselModule,
+    NgRatingBarModule,
+  ],
 })
 export class ShopModule {}
