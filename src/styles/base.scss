@@ -2,3 +2,29 @@
   max-width: 80rem;
   margin: 0 auto;
 }
+
+.btn {
+  border-radius: 8px;
+  border-style: none;
+  cursor: pointer;
+  margin: 0;
+  outline: none;
+  padding: 10px 20px;
+  text-align: center;
+  transition: color 100ms;
+  font-weight: bold;
+}
+
+.btn-oval {
+  border-radius: 24px;
+}
+
+.btn-orange {
+  background: $text-orange;
+  color: white;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.5;
+}
