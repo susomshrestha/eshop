@@ -2,6 +2,9 @@
 
 .header {
   background: white;
+  z-index: 10;
+  position: relative;
+  transition: position 10s ease-in;
 
   &.sticky {
     left: 0;
@@ -9,7 +12,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0 10px 15px rgb(25 25 25 / 10%);
+    box-shadow: 0 2px 5px rgb(25 25 25 / 10%);
   }
 
   .header-wrapper {
