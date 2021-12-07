@@ -13,6 +13,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { NgRatingBarModule } from 'ng-rating-bar';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgRatingBarModule } from 'ng-rating-bar';
     CategoryComponent,
     ProductSliderComponent,
     ProductItemComponent,
+    CartComponent,
   ],
   imports: [
     CommonModule,

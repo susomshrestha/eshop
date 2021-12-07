@@ -1,3 +1,4 @@
+// font sizes
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
 $font-size-n: 1rem;
@@ -8,20 +9,30 @@ $font-size-xlg: 2rem;
 $font-size-xxlg: 2.5rem;
 $font-size-xxxlg: 4rem;
 
+// primary colors
 $black-n: #141517;
 $black-lt: #74706b;
 
 $akaroa: #cebd9c;
 $cotton-seed: #bbb9b5;
+$parchment: #f3ead8;
 
 $flamingo: #ee4d30;
 $torch-red: #ff2020;
 $rangoon-green: #171613;
 
+// text colors
 $text-black: $black-n;
 $text-black-lt: $black-lt;
 $text-orange: $torch-red;
 $text-yellow: $akaroa;
 $text-white-dk: $cotton-seed;
 
+//  background colors
 $bg-green-dk: $rangoon-green;
+$bg-yellow-lt: $parchment;
+
+// breakpoints
+$screen-sm: 40rem;
+$screen-md: 48rem;
+$screen-lg: 64rem;

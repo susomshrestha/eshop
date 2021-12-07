@@ -13,8 +13,13 @@ footer {
     padding: 40px;
     display: grid;
     grid-template-areas:
-      'logo explore customer connect'
-      'logo explore-list customer-list connect-list';
+      'logo'
+      'explore'
+      'explore-list'
+      'customer'
+      'customer-list'
+      'connect'
+      'connect-list';
 
     .logo {
       grid-area: logo;
@@ -46,17 +51,16 @@ footer {
     .title {
       color: white;
       font-size: $font-size-lg;
+      padding: 10px 0;
     }
 
     .list {
       color: $text-white-dk;
       font-size: $font-size-n;
-      margin-top: 20px;
       line-height: 1.5;
     }
 
     .link {
-      padding: 0 5px;
       ul {
         list-style: none;
         padding-left: 0;
@@ -71,6 +75,7 @@ footer {
         }
       }
     }
+
     .explore {
       grid-area: explore;
     }
@@ -98,6 +103,16 @@ footer {
         margin-top: 10px;
         line-height: 1;
       }
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  footer {
+    .footer-wrap {
+      grid-template-areas:
+        'logo explore customer connect'
+        'logo explore-list customer-list connect-list' !important;
     }
   }
 }
