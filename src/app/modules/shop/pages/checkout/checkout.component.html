@@ -1,0 +1,59 @@
+<div class="fixed-width-container">
+  <div class="checkout">
+    <div class="product-view">
+      <div class="product-list">
+        <div class="product-item" *ngFor="let item of [1,2,3]">
+          <div class="img-div">
+            <img
+              src="/assets/images/product/engin-akyurt-5raPrOhbKQo-unsplash.jpg"
+            />
+          </div>
+          <div class="name-price">
+            <div class="name">
+              White Tshirt
+            </div>
+            <div class="price-quantity">
+              <div class="quantity">
+                x2
+              </div>
+              <div class="price">
+                {{ '80' | rs }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sub-shipping">
+        <div class="sub-total">
+          <div>Subtotal</div>
+          <div>{{ '80' | rs}}</div>
+        </div>
+        <div class="shipping">
+          <div>Shipping</div>
+          <div>{{ '100' | rs}}</div>
+        </div>
+      </div>
+      <div class="total">
+        <div>Total</div>
+        <div>{{'180' | rs}}</div>
+      </div>
+    </div>
+    <div class="detail-view">
+      <div class="shipping-address">
+        <div class="title">
+          Shipping Address
+        </div>
+        <div
+          class="map-container"
+          leaflet
+          [leafletOptions]="options"
+          (leafletMapReady)="onMapReady($event)"
+          (leafletClick)="onMapClick($event)"
+        ></div>
+        <div class="address-input">
+          <input type="text" disabled [(ngModel)]="shipping" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

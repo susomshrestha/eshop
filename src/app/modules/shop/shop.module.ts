@@ -14,6 +14,9 @@ import { ProductSliderComponent } from './components/product-slider/product-slid
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { NgRatingBarModule } from 'ng-rating-bar';
 import { CartComponent } from './pages/cart/cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { CartComponent } from './pages/cart/cart.component';
     ProductSliderComponent,
     ProductItemComponent,
     CartComponent,
+    CheckoutComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +37,8 @@ import { CartComponent } from './pages/cart/cart.component';
     SharedModule,
     SlickCarouselModule,
     NgRatingBarModule,
+    LeafletModule,
+    FormsModule,
   ],
 })
 export class ShopModule {}
