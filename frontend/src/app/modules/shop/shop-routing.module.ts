@@ -4,6 +4,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductSearchComponent } from './pages/product-search/product-search.component';
 import { ShopComponent } from './shop.component';
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'checkout',
         component: CheckoutComponent,
+      },
+      {
+        path: 'search',
+        component: ProductSearchComponent,
       },
     ],
   },

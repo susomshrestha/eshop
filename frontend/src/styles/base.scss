@@ -50,3 +50,17 @@ input[type='time']:focus {
   border-color: dodgerBlue;
   box-shadow: 0 0 3px 0 dodgerBlue;
 }
+
+select {
+  padding: 5px 10px;
+  background: white;
+  color: $text-black;
+  border: 1px solid #cccccc;
+  margin: 5px;
+  min-width: 150px;
+
+  &::-ms-expand {
+    right: 10px;
+    display: none;
+  }
+}

@@ -1,0 +1,32 @@
+<div class="search-page">
+  <div class="header-div">
+    Search keyword
+  </div>
+  <div class="fixed-width-container">
+    <div class="result-view">
+      <div class="sort">
+        <label for="sort">Sort by:</label>
+        <select name="sort">
+          <option value="price" selected>price</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="search-results">
+        <div class="products">
+          <div class="product" *ngFor="let item of slides">
+            <app-product-item [product]="item.img"></app-product-item>
+          </div>
+        </div>
+        <div class="pagination">
+          <ngx-light-pagination
+            [color]="'#ee4d30'"
+            [paginationData]="paginationMeta"
+            (onPageChange)="pageChange($event)"
+          ></ngx-light-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
