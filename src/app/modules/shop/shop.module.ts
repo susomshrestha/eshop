@@ -17,6 +17,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { FormsModule } from '@angular/forms';
+import { ProductSearchComponent } from './pages/product-search/product-search.component';
+import { NgxLightPaginationModule } from 'ngx-light-pagination';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     ProductItemComponent,
     CartComponent,
     CheckoutComponent,
+    ProductSearchComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     NgRatingBarModule,
     LeafletModule,
     FormsModule,
+    NgxLightPaginationModule,
   ],
 })
 export class ShopModule {}
