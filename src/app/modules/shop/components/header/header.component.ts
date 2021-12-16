@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,11 +24,15 @@ export class HeaderComponent implements OnInit {
     this.isSticky = window.pageYOffset >= this.headerHeight;
   }
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngAfterViewInit() {
     this.headerHeight = this.headerEle.nativeElement.offsetHeight;
   }
 
   ngOnInit(): void {}
+
+  userRedirect(): void {
+    this.router.navigate(['/auth/login']);
+  }
 }

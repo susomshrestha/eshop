@@ -1,0 +1,76 @@
+<app-auth-header
+  [title]="'Sign Up'"
+  [subtitle]="'Create your account to get full access'"
+></app-auth-header>
+<div class="register">
+  <form [formGroup]="registerForm">
+    <div class="formgroup-div">
+      <div class="formgroup">
+        <div class="label">
+          Full Name
+        </div>
+        <div class="input">
+          <input
+            formControlName="fullName"
+            placeholder="Enter Full Name"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="error">Full Name is required</div>
+    </div>
+    <div class="formgroup-div">
+      <div class="formgroup">
+        <div class="label">
+          Email
+        </div>
+        <div class="input">
+          <input
+            formControlName="email"
+            placeholder="Enter Email"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="error">Email is required</div>
+    </div>
+    <div class="formgroup-div">
+      <div class="formgroup">
+        <div class="label">
+          Password
+        </div>
+        <div class="input">
+          <input
+            formControlName="password"
+            placeholder="Enter Password"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="error">Password is required</div>
+    </div>
+    <div class="formgroup-div">
+      <div class="formgroup">
+        <div class="label">
+          Confirm Password
+        </div>
+        <div class="input">
+          <input
+            formControlName="confirmPassword"
+            placeholder="Enter Confirm Password"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="error">Password does not match</div>
+    </div>
+  </form>
+  <div class="info-button-div">
+    <div class="info">
+      Already have an account? <a routerLink="/auth/login">Login</a> here
+    </div>
+    <div class="button-div">
+      <button class="btn btn-orange">Sign Up</button>
+    </div>
+  </div>
+</div>
