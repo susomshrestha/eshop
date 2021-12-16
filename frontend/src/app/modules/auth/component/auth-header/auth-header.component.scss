@@ -1,0 +1,16 @@
+@import '../../../../../styles.scss';
+
+.header {
+  color: $text-black;
+  text-align: center;
+
+  .title {
+    font-weight: bold;
+    font-size: $font-size-lg;
+  }
+
+  .subtitle {
+    margin-top: 10px;
+    font-size: $font-size-md;
+  }
+}

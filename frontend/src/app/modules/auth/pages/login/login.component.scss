@@ -1,0 +1,28 @@
+@import '../../../../../styles.scss';
+
+.login {
+  margin-top: 40px;
+
+  .info-button-div {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+      font-size: $font-size-n;
+      a {
+        color: $text-orange;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .button-div {
+      button {
+        border-radius: 0;
+        min-height: 50px;
+      }
+    }
+  }
+}

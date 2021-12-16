@@ -5,7 +5,7 @@ function auth() {
   return expressJwt({
     secret: process.env.secret,
     algorithms: ['HS256'],
-    // isRevoked: isRevoked,
+    isRevoked: isRevoked,
   }).unless({
     path: [
       {

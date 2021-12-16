@@ -4,6 +4,7 @@
 }
 
 .btn {
+  font-size: $font-size-n;
   border-radius: 8px;
   border-style: none;
   cursor: pointer;
@@ -62,5 +63,30 @@ select {
   &::-ms-expand {
     right: 10px;
     display: none;
+  }
+}
+
+.formgroup-div {
+  margin-top: 15px;
+  .formgroup {
+    .label {
+      font-size: $font-size-md;
+      margin-bottom: 6px;
+      color: $text-black;
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+
+    .input {
+      input {
+        height: 50px;
+        padding: 0 25px;
+      }
+    }
+  }
+
+  .error {
+    color: $text-orange;
+    padding: 5px 0 0;
   }
 }

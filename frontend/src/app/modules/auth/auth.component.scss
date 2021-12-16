@@ -1,0 +1,23 @@
+@import '../../../styles.scss';
+
+.auth {
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+  height: 100vh;
+
+  .auth-wrap {
+    padding: 40px 20px;
+    min-width: 90vw;
+    box-shadow: 0 10px 30px 0 rgb(13 12 13 / 20%);
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .auth {
+    .auth-wrap {
+      padding: 50px 60px;
+      min-width: 600px;
+    }
+  }
+}
