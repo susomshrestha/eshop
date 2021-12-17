@@ -1,7 +1,4 @@
-<app-auth-header
-  [title]="'Sign Up'"
-  [subtitle]="'Create your account to get full access'"
-></app-auth-header>
+<app-auth-header [title]="'Sign Up'" [subtitle]="'Create your account to get full access'"> </app-auth-header>
 <div class="register">
   <form [formGroup]="registerForm">
     <div class="formgroup-div">
@@ -10,14 +7,19 @@
           Full Name
         </div>
         <div class="input">
-          <input
-            formControlName="fullName"
-            placeholder="Enter Full Name"
-            type="text"
-          />
+          <input formControlName="fullName" placeholder="Enter Full Name" type="text" />
         </div>
       </div>
-      <div class="error">Full Name is required</div>
+      <div
+        *ngIf="registerForm.controls['fullName'].invalid && (registerForm.controls['fullName'].dirty || registerForm.controls['fullName'].touched)"
+      >
+        <div
+          *ngIf="registerForm.controls['fullName'].errors && registerForm.controls['fullName'].errors.required"
+          class="error"
+        >
+          Full Name is required
+        </div>
+      </div>
     </div>
     <div class="formgroup-div">
       <div class="formgroup">
@@ -25,14 +27,16 @@
           Email
         </div>
         <div class="input">
-          <input
-            formControlName="email"
-            placeholder="Enter Email"
-            type="text"
-          />
+          <input formControlName="email" placeholder="Enter Email" type="text" />
         </div>
       </div>
-      <div class="error">Email is required</div>
+      <div
+        *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)"
+      >
+        <div *ngIf="registerForm.controls['email'].errors " class="error">
+          Email is required
+        </div>
+      </div>
     </div>
     <div class="formgroup-div">
       <div class="formgroup">
@@ -40,14 +44,16 @@
           Password
         </div>
         <div class="input">
-          <input
-            formControlName="password"
-            placeholder="Enter Password"
-            type="text"
-          />
+          <input formControlName="password" placeholder="Enter Password" type="password" />
         </div>
       </div>
-      <div class="error">Password is required</div>
+      <div
+        *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)"
+      >
+        <div *ngIf="registerForm.controls['password'].errors " class="error">
+          Password is required
+        </div>
+      </div>
     </div>
     <div class="formgroup-div">
       <div class="formgroup">
@@ -55,22 +61,22 @@
           Confirm Password
         </div>
         <div class="input">
-          <input
-            formControlName="confirmPassword"
-            placeholder="Enter Confirm Password"
-            type="text"
-          />
+          <input formControlName="confirmPassword" placeholder="Enter Confirm Password" type="password" />
         </div>
       </div>
-      <div class="error">Password does not match</div>
+      <div
+        *ngIf="registerForm.controls['confirmPassword'].invalid && (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)"
+      >
+        <div *ngIf="registerForm.controls['confirmPassword'].errors " class="error">
+          Password does not match.
+        </div>
+      </div>
+    </div>
+    <div class="info-button-div">
+      <div class="info">Already have an account? <a routerLink="/auth/login">Login</a> here</div>
+      <div class="button-div">
+        <button class="btn btn-orange" (click)="register()">Sign Up</button>
+      </div>
     </div>
   </form>
-  <div class="info-button-div">
-    <div class="info">
-      Already have an account? <a routerLink="/auth/login">Login</a> here
-    </div>
-    <div class="button-div">
-      <button class="btn btn-orange">Sign Up</button>
-    </div>
-  </div>
 </div>

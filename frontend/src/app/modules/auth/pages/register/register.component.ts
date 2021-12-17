@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../service/auth.service';
+import { PasswordMatchValidator } from '../../validator/password-match.validator';
 
 @Component({
   selector: 'app-register',
@@ -9,14 +12,36 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor() {
-    this.registerForm = new FormGroup({
-      fullName: new FormControl(''),
-      email: new FormControl(''),
-      password: new FormControl(''),
-      confirmPassword: new FormControl(''),
-    });
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.registerForm = this.fb.group(
+      {
+        fullName: ['', Validators.required],
+        email: ['', Validators.required],
+        password: ['', Validators.required],
+        confirmPassword: ['', Validators.required],
+      },
+      {
+        validator: PasswordMatchValidator('password', 'confirmPassword'),
+      }
+    );
   }
 
   ngOnInit(): void {}
+
+  register(): void {
+    if (this.registerForm.valid) {
+      const data = {
+        name: this.registerForm.value.fullName,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password,
+      };
+      this.authService.register(data).subscribe((res: any) => {
+        if (res.success) {
+          this.router.navigate(['/']);
+        }
+      });
+    } else {
+      this.registerForm.markAllAsTouched();
+    }
+  }
 }
