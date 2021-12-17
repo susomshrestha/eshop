@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -10,27 +11,30 @@ import { AuthService } from '../../service/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private authService: AuthService) {
-    this.loginForm = new FormGroup({
-      fullName: new FormControl(''),
-      email: new FormControl(''),
-      password: new FormControl(''),
-      confirmPassword: new FormControl(''),
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.loginForm = this.fb.group({
+      fullName: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
     });
   }
 
   ngOnInit(): void {}
 
   login(): void {
-    this.authService.login().subscribe((res: any) => {
-      console.log(res);
-    });
-  }
-
-  logout(): void {
-    this.authService.logout();
-    this.authService.getUser().subscribe((resUser: any) => {
-      console.log(resUser);
-    });
+    if (this.loginForm.valid) {
+      const data = {
+        email: this.loginForm.value.email,
+        password: this.loginForm.value.password,
+      };
+      this.authService.login(data).subscribe((res: any) => {
+        if (res.success) {
+          this.router.navigate(['/']);
+        }
+      });
+    } else {
+      this.loginForm.markAllAsTouched();
+    }
   }
 }

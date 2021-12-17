@@ -11,13 +11,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(): any {
-    return this.http
-      .post(this.baseUrl + 'user/login', {
-        email: 'susom@test.com',
-        password: 'susom123',
-      })
-      .pipe(tap((res: any) => this.setSession(res)));
+  login(data: any): any {
+    return this.http.post(this.baseUrl + 'user/login', data).pipe(tap((res: any) => this.setSession(res)));
+  }
+
+  register(data: any): any {
+    return this.http.post(this.baseUrl + 'user/register', data).pipe(tap((res: any) => this.setSession(res)));
   }
 
   logout(): any {

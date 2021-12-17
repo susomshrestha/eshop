@@ -1,7 +1,4 @@
-<app-auth-header
-  [title]="'Login'"
-  [subtitle]="'Enter Login details to get access'"
-></app-auth-header>
+<app-auth-header [title]="'Login'" [subtitle]="'Enter Login details to get access'"></app-auth-header>
 <div class="login">
   <form [formGroup]="loginForm">
     <div class="formgroup-div">
@@ -10,11 +7,7 @@
           Email
         </div>
         <div class="input">
-          <input
-            formControlName="email"
-            placeholder="Enter Email"
-            type="text"
-          />
+          <input formControlName="email" placeholder="Enter Email" type="text" />
         </div>
       </div>
       <div class="error">Email is required</div>
@@ -25,22 +18,16 @@
           Password
         </div>
         <div class="input">
-          <input
-            formControlName="password"
-            placeholder="Enter Password"
-            type="text"
-          />
+          <input formControlName="password" placeholder="Enter Password" type="text" />
         </div>
       </div>
       <div class="error">Password is required</div>
     </div>
   </form>
   <div class="info-button-div">
-    <div class="info">
-      Don't have an account? <a routerLink="/auth/register">Sign up</a> here
-    </div>
+    <div class="info">Don't have an account? <a routerLink="/auth/register">Sign up</a> here</div>
     <div class="button-div">
-      <button class="btn btn-orange" (click)="logout()">Login</button>
+      <button class="btn btn-orange" (click)="login()">Login</button>
     </div>
   </div>
 </div>
