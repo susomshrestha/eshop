@@ -20,6 +20,7 @@ function auth() {
         url: /\/api\/v1\/categories(.*)/,
         methods: [`GET`, `OPTIONS`],
       },
+      `${api}/user/active`,
       `${api}/user/login`,
       `${api}/user/register`,
     ],

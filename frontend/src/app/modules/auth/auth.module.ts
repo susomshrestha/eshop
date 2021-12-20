@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { AuthHeaderComponent } from './component/auth-header/auth-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivateComponent } from './pages/activate/activate.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     ForgotComponent,
     AuthHeaderComponent,
+    ActivateComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, FormsModule, ReactiveFormsModule],
 })

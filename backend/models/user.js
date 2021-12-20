@@ -15,7 +15,6 @@ const userSchema = mongoose.Schema({
   },
   phone: {
     type: String,
-    required: true,
   },
   isAdmin: {
     type: String,
@@ -29,6 +28,16 @@ const userSchema = mongoose.Schema({
   },
   street: {
     type: String,
+  },
+  active: {
+    type: Boolean,
+    default: false,
+  },
+  activeToken: {
+    type: String,
+  },
+  activeTokenExpire: {
+    type: Date,
   },
 });
 

@@ -45,6 +45,5 @@ mongoose
   });
 
 app.listen(3000, () => {
-  console.log(api);
   console.log('Server started');
 });

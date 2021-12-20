@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { tap } from 'rxjs/operators';
@@ -17,6 +17,12 @@ export class AuthService {
 
   register(data: any): any {
     return this.http.post(this.baseUrl + 'user/register', data).pipe(tap((res: any) => this.setSession(res)));
+  }
+
+  activate(token: string): any {
+    let params = new HttpParams();
+    params = params.set('authToken', token);
+    return this.http.get(this.baseUrl + 'user/active', { params });
   }
 
   logout(): any {
