@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { AuthService } from '../../service/auth.service';
   styleUrls: ['./activate.component.scss'],
 })
 export class ActivateComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute, private authService: AuthService) {}
+  constructor(private activatedRoute: ActivatedRoute, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
@@ -21,6 +21,7 @@ export class ActivateComponent implements OnInit {
   activateAccount(token: string): void {
     this.authService.activate(token).subscribe((res: any) => {
       console.log(res);
+      this.router.navigate(['/auth/login']);
     });
   }
 }

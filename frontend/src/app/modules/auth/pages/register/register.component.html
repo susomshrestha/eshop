@@ -1,6 +1,6 @@
 <app-auth-header [title]="'Sign Up'" [subtitle]="'Create your account to get full access'"> </app-auth-header>
 <div class="register">
-  <form [formGroup]="registerForm">
+  <form *ngIf="!success" [formGroup]="registerForm">
     <div class="formgroup-div">
       <div class="formgroup">
         <div class="label">
@@ -79,4 +79,17 @@
       </div>
     </div>
   </form>
+  <div class="success" *ngIf="success">
+    <div class="success-icon">
+      <i class="material-icons">check_circle</i>
+    </div>
+    <div class="message">
+      Thank you for signing up. <br />
+      <br />
+      An activation link has been sent to your registered email.
+    </div>
+    <div class="back">
+      <button class="btn btn-orange" (click)="backToHome()">Back To Home</button>
+    </div>
+  </div>
 </div>
