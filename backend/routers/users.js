@@ -93,7 +93,7 @@ router.post(`/register`, async (req, res) => {
   });
 });
 
-router.put(`/:id`, async (req, res) => {
+router.put(`/:id`, async (req, res, next) => {
   const userExist = await User.findById(req.params.id);
 
   const user = await User.findByIdAndUpdate(
@@ -119,17 +119,19 @@ router.put(`/:id`, async (req, res) => {
   res.send(user);
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
-
-  console.log(user);
 
   if (!user) {
     return res.status(400).send({ error: 'User not found' });
   }
 
-  if (bcrypt.compareSync(req.body.password, user.passwordHash)) {
-    return res.status(400).send({ error: 'Invalid credentials' });
+  if (!user.active) {
+    return res.status(403).send({ error: 'User not activated' });
+  }
+
+  if (!bcrypt.compareSync(req.body.password, user.passwordHash)) {
+    return next(Error('Invalid User'));
   }
 
   const token = jwt.sign(
@@ -144,7 +146,8 @@ router.post('/login', async (req, res) => {
   );
 
   res.send({
-    user,
+    success: true,
+    data: user,
     token: token,
   });
 });

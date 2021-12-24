@@ -34,7 +34,7 @@ mongoose
   .connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: 'eshop',
+    dbName: process.env.DB_NAME,
   })
   .then(() => {
     console.log('Database connection successful.');
@@ -44,6 +44,6 @@ mongoose
     console.log(e);
   });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server started');
 });
