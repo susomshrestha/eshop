@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const auth = require('./helpers/jwt');
+const errorHandler = require('./helpers/error-handler');
+const cors = require('cors');
+require('dotenv/config');
+
 const productRouter = require('./routers/products');
 const categoryRouter = require('./routers/categories');
 const userRouter = require('./routers/users');
 const orderRouter = require('./routers/orders');
-const auth = require('./helpers/jwt');
-const errorHandler = require('./helpers/error-handler');
-
-require('dotenv/config');
-const cors = require('cors');
 
 const api = process.env.API_URL;
 
