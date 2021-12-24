@@ -3,7 +3,7 @@ const expressJwt = require('express-jwt');
 function auth() {
   const api = process.env.API_URL;
   return expressJwt({
-    secret: process.env.secret,
+    secret: process.env.SECRET,
     algorithms: ['HS256'],
     isRevoked: isRevoked,
   }).unless({

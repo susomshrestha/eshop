@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const auth = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
 const cors = require('cors');
-require('dotenv/config');
+require('dotenv').config();
 
 const productRouter = require('./routers/products');
 const categoryRouter = require('./routers/categories');
