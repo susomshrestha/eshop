@@ -17,12 +17,29 @@
         cursor: pointer;
       }
     }
+  }
 
-    .button-div {
-      button {
-        border-radius: 0;
-        min-height: 50px;
+  button {
+    border-radius: 0;
+    min-height: 50px;
+  }
+
+  .success {
+    text-align: center;
+
+    .success-icon {
+      i {
+        color: $success-green;
+        font-size: $font-size-xxxlg;
       }
+    }
+
+    .message {
+      padding: 10px 0;
+    }
+
+    .back {
+      margin-top: 10px;
     }
   }
 }

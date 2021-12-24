@@ -11,6 +11,7 @@ import { PasswordMatchValidator } from '../../validator/password-match.validator
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  success: Boolean;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.registerForm = this.fb.group(
@@ -37,11 +38,15 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.register(data).subscribe((res: any) => {
         if (res.success) {
-          this.router.navigate(['/']);
+          this.success = true;
         }
       });
     } else {
       this.registerForm.markAllAsTouched();
     }
+  }
+
+  backToHome(): void {
+    this.router.navigate(['/']);
   }
 }

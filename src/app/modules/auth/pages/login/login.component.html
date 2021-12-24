@@ -10,7 +10,13 @@
           <input formControlName="email" placeholder="Enter Email" type="text" />
         </div>
       </div>
-      <div class="error">Email is required</div>
+      <div
+        *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
+      >
+        <div *ngIf="loginForm.controls['email'].errors " class="error">
+          Email is required.
+        </div>
+      </div>
     </div>
     <div class="formgroup-div">
       <div class="formgroup">
@@ -18,10 +24,16 @@
           Password
         </div>
         <div class="input">
-          <input formControlName="password" placeholder="Enter Password" type="text" />
+          <input formControlName="password" placeholder="Enter Password" type="password" />
         </div>
       </div>
-      <div class="error">Password is required</div>
+      <div
+        *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+      >
+        <div *ngIf="loginForm.controls['password'].errors " class="error">
+          Password is required.
+        </div>
+      </div>
     </div>
   </form>
   <div class="info-button-div">
